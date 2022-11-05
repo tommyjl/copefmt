@@ -1,9 +1,8 @@
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
+use std::io::{prelude::*, BufReader, BufWriter};
 
 pub struct Formatter<R: Read, W: Write> {
     reader: BufReader<R>,
-    writer: W,
+    writer: BufWriter<W>,
     current: u8,
     newline: String,
     indent: String,
@@ -14,7 +13,7 @@ impl<R: Read, W: Write> Formatter<R, W> {
     pub fn new(reader: R, writer: W) -> Self {
         Self {
             reader: BufReader::new(reader),
-            writer,
+            writer: BufWriter::new(writer),
             current: 0,
             newline: "\n".to_string(),
             indent: "    ".to_string(),
