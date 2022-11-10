@@ -1,5 +1,11 @@
 [package]
 name = "copefmt"
+description = "copium code formatter"
+homepage = "https://github.com/tommyjl/copefmt"
+repository = "https://github.com/tommyjl/copefmt"
+documentation = "https://github.com/tommyjl/copefmt"
+readme = "README.md"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
 
